@@ -1,9 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import OnboardingScreen from '../screens/onboarding/OnboardingScreen.tsx';
-import PaywallScreen from '../screens/paywall/PaywallScreen.tsx';
-import HomeScreen from '../screens/home/HomeScreen.tsx';
-import { RootStackParamList } from '../types/navigation.ts';
+import OnboardingScreen from '@/screens/onboarding/OnboardingScreen';
+import PaywallScreen from '@/screens/paywall/PaywallScreen';
+import HomeScreen from '@/screens/home/HomeScreen';
+import { RootStackParamList } from '@/types/navigation';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
