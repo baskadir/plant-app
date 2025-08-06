@@ -4,6 +4,7 @@ import OnboardingScreen from '@/screens/onboarding/OnboardingScreen';
 import PaywallScreen from '@/screens/paywall/PaywallScreen';
 import HomeScreen from '@/screens/home/HomeScreen';
 import { RootStackParamList } from '@/types/navigation';
+import GetStartedScreen from '@/screens/get-started/GetStartedScreen.tsx';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -14,7 +15,9 @@ const AppNavigator = () => {
         screenOptions={{
           headerShown: false,
         }}
+        initialRouteName="GetStarted"
       >
+        <Stack.Screen name="GetStarted" component={GetStartedScreen} />
         <Stack.Screen name="Onboarding" component={OnboardingScreen} />
         <Stack.Screen name="Paywall" component={PaywallScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
