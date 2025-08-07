@@ -6,6 +6,7 @@ import { View, Image, Text, FlatList, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "@/store";
 import styles from "./styles";
+
 interface Feature {
     icon: any;
     title: string;
@@ -55,7 +56,7 @@ const Paywall = () => {
 
     const handleClose = async () => {
         await dispatch(completeOnboarding());
-        navigation.navigate("Home");
+        navigation.navigate("MainTab");
     }
 
     return (

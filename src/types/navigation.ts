@@ -1,19 +1,57 @@
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RouteProp} from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { CompositeNavigationProp, RouteProp } from '@react-navigation/native';
+import { BottomTabNavigationProp } from 'node_modules/@react-navigation/bottom-tabs/lib/typescript/src/types';
 
 export type RootStackParamList = {
-  GetStarted: undefined;
-  Onboarding: undefined;
-  Paywall: undefined;
-  Home: undefined;
+    GetStarted: undefined;
+    Onboarding: undefined;
+    MainTab: undefined;
+}
+
+// Tab Navigator Types
+export type TabParamList = {
+    Home: undefined;
+    Diagnose: undefined;
+    Scan: undefined;
+    MyGarden: undefined;
+    Profile: undefined;
 }
 
 export type GetStartedNavigationProp = NativeStackNavigationProp<RootStackParamList, 'GetStarted'>;
 export type OnboardingNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Onboarding'>;
-export type PaywallNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Paywall'>;
-export type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
+export type MainTabNavigationProp = NativeStackNavigationProp<RootStackParamList, 'MainTab'>;
+
+export type HomeNavigationProp = CompositeNavigationProp<
+    BottomTabNavigationProp<TabParamList, 'Home'>,
+    NativeStackNavigationProp<RootStackParamList>
+>;
+
+export type DiagnoseNavigationProp = CompositeNavigationProp<
+    BottomTabNavigationProp<TabParamList, 'Diagnose'>,
+    NativeStackNavigationProp<RootStackParamList>
+>;
+
+export type ScanNavigationProp = CompositeNavigationProp<
+    BottomTabNavigationProp<TabParamList, 'Scan'>,
+    NativeStackNavigationProp<RootStackParamList>
+>;
+
+export type MyGardenNavigationProp = CompositeNavigationProp<
+    BottomTabNavigationProp<TabParamList, 'MyGarden'>,
+    NativeStackNavigationProp<RootStackParamList>
+>;
+
+export type ProfileNavigationProp = CompositeNavigationProp<
+    BottomTabNavigationProp<TabParamList, 'Profile'>,
+    NativeStackNavigationProp<RootStackParamList>
+>;
 
 export type GetStartedRouteProp = RouteProp<RootStackParamList, 'GetStarted'>;
 export type OnboardingRouteProp = RouteProp<RootStackParamList, 'Onboarding'>;
-export type PaywallRouteProp = RouteProp<RootStackParamList, 'Paywall'>;
-export type HomeRouteProp = RouteProp<RootStackParamList, 'Home'>;
+export type MainTabRouteProp = RouteProp<RootStackParamList, 'MainTab'>;
+
+export type HomeRouteProp = RouteProp<TabParamList, 'Home'>;
+export type DiagnoseRouteProp = RouteProp<TabParamList, 'Diagnose'>;
+export type ScanRouteProp = RouteProp<TabParamList, 'Scan'>;
+export type MyGardenRouteProp = RouteProp<TabParamList, 'MyGarden'>;
+export type ProfileRouteProp = RouteProp<TabParamList, 'Profile'>;
