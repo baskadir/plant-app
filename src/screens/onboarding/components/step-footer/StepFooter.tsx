@@ -7,26 +7,30 @@ import { nextStep } from '@/store/slices/onboardingSlice.ts';
 import { RootState } from '@/store';
 
 const StepFooter = () => {
-  const {currentStep, totalSteps} = useSelector((state: RootState) => state.onboarding);
-  const dispatch = useDispatch();
+    const { currentStep, totalSteps } = useSelector((state: RootState) => state.onboarding);
+    const dispatch = useDispatch();
 
-  const handleOnPress = () => {
-    dispatch(nextStep());
-  };
+    const handleOnPress = () => {
+        dispatch(nextStep());
+    };
 
-  return (
-    <>
-      <View style={styles.buttonContainer}>
-        <Button onPress={handleOnPress} title={'Continue'} />
-      </View>
+    return (
+        <>
+            <View style={styles.buttonContainer}>
+                <Button
+                    onPress={handleOnPress}
+                    borderRadius={12}
+                    title={'Continue'}
+                />
+            </View>
 
-      <View style={styles.dots}>
-        {Array.from({ length: totalSteps }, (_, i) => (
-          <View key={i} style={[styles.dot, currentStep === i ? styles.activeDot : null]} />
-        ))}
-      </View>
-    </>
-  );
+            <View style={styles.dots}>
+                {Array.from({ length: totalSteps }, (_, i) => (
+                    <View key={i} style={[styles.dot, currentStep === i ? styles.activeDot : null]} />
+                ))}
+            </View>
+        </>
+    );
 };
 
 export default StepFooter;
