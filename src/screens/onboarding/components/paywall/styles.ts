@@ -32,28 +32,29 @@ export default StyleSheet.create({
     },
     closeButtonText: {
         color: "#FFFFFF",
+        fontFamily: "Rubik-SemiBold",
         fontSize: 10,
-        fontWeight: 500,
     },
     featureList: {
-        paddingBottom: 20,
+        paddingBottom: 16,
     },
     featureContainer: {
         position: "absolute",
         paddingLeft: 20,
     },
     featureTitle: {
-        fontSize: 24,
-        fontWeight: "bold",
+        fontSize: 28,
+        fontFamily: "Rubik-Bold",
         color: "#FFFFFF",
     },
+    featureRegular: {
+        fontFamily: "Rubik-Regular",
+    },
     featureSubtitle: {
+        fontFamily: "Rubik-Light",
         fontSize: 17,
         color: "rgba(255, 255, 255, 0.7)",
         marginBottom: 20,
-        lineHeight: 24,
-        letterSpacing: 0.38,
-        fontWeight: 200,
     },
     featureCard: {
         backgroundColor: "rgba(255, 255, 255, 0.08)",
@@ -74,17 +75,14 @@ export default StyleSheet.create({
         marginBottom: 16,
     },
     featureCardTitle: {
+        fontFamily: "Rubik-Medium",
         fontSize: 20,
-        fontWeight: 500,
         color: "#FFFFFF",
-        letterSpacing: 0.38,
-        lineHeight: 24,
     },
     featureCardDescription: {
+        fontFamily: "Rubik-Regular",
         fontSize: 13,
         color: "rgba(255, 255, 255, 0.7)",
-        lineHeight: 18,
-        letterSpacing: -0.08,
     },
     subscriptionPlanContainer: {
         paddingVertical: 10,
@@ -116,11 +114,12 @@ export default StyleSheet.create({
         backgroundColor: "#FFFFFF",
     },
     subscriptionPlanTitle: {
+        fontFamily: "Rubik-Medium",
         fontSize: 16,
-        fontWeight: 500,
         color: "#FFFFFF",
     },
     subscriptionPlanDescription: {
+        fontFamily: "Rubik-Light",
         fontSize: 12,
         color: "rgba(255, 255, 255, 0.7)",
     },
@@ -135,6 +134,7 @@ export default StyleSheet.create({
         alignItems: "center",
     },
     yearlyDiscount: {
+        fontFamily: "Rubik-Medium",
         position: "absolute",
         top: 0,
         right: 0,
@@ -149,13 +149,14 @@ export default StyleSheet.create({
         lineHeight: 18,
     },
     subscriptionPlanWarning: {
+        fontFamily: "Rubik-Light",
         fontSize: 9,
-        fontWeight: 200,
         color: "rgba(255, 255, 255, 0.52)",
         textAlign: "center",
         marginTop: 10,
     },
     footer: {
+        fontFamily: "Rubik-Regular",
         fontSize: 11,
         color: "rgba(255, 255, 255, 0.52)",
         textAlign: "center",

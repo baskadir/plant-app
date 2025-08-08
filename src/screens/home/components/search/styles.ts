@@ -13,10 +13,10 @@ export default StyleSheet.create({
         gap: 10,
     },
     searchInput: {
+        fontFamily: 'Rubik-Regular',
         height: 44,
         flex: 1,
         fontSize: 16,
-        letterSpacing: 0.07,
         color: '#AFAFAF',
     },
     searchIcon: {

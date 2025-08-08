@@ -32,11 +32,9 @@ export default StyleSheet.create({
         marginBottom: 24,
     },
     questionListTitle: {
+        fontFamily: "Rubik-Medium",
         fontSize: 15,
-        fontWeight: 500,
         color: COLORS.MAIN_TEXT,
-        lineHeight: 20,
-        letterSpacing: -0.24,
         marginVertical: 12,
     },
     categoryListContainer: {

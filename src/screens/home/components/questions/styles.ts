@@ -15,19 +15,13 @@ export default StyleSheet.create({
         resizeMode: 'contain',
     },
     questionTitle: {
+        fontFamily: "Rubik-Medium",
         fontSize: 15,
         color: "#ffffff",
-        fontWeight: 500,
-        lineHeight: 20,
-        letterSpacing: -0.24,
         position: 'absolute',
         bottom: 12,
         left: 12,
         height: 40,
         maxWidth: 200,
-    },
-    questionDescription: {
-        fontSize: 14,
-        color: '#666',
     },
 })

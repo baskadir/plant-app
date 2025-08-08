@@ -75,7 +75,7 @@ const Paywall = () => {
                 </TouchableOpacity>
                 <View style={styles.featureContainer}>
                     <Text style={styles.featureTitle}>
-                        PlantApp Premium
+                        PlantApp <Text style={[styles.featureTitle, styles.featureRegular]}>Premium</Text>
                     </Text>
                     <Text style={styles.featureSubtitle}>
                         Access All Features

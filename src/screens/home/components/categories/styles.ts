@@ -21,10 +21,8 @@ export default StyleSheet.create({
         resizeMode: "cover",
     },
     title: {
+        fontFamily: "Rubik-Medium",
         fontSize: 16,
-        lineHeight: 21,
-        letterSpacing: -0.32,
-        fontWeight: 500,
         color: COLORS.MAIN_TEXT,
         padding: 8,
         maxWidth: 100,

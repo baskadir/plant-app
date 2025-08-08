@@ -21,17 +21,14 @@ export default StyleSheet.create({
         height: 36,
     },
     title: {
+        fontFamily: "Rubik-Medium",
         color: "#E4B046",
         fontSize: 16,
-        letterSpacing: -0.32,
-        lineHeight: 21,
-        fontWeight: 500,
     },
     subtitle: {
+        fontFamily: "Rubik-Regular",
         color: "#E4B046",
         fontSize: 13,
-        letterSpacing: 0,
-        lineHeight: 16,
     },
     iconRight: {
         resizeMode: "contain",

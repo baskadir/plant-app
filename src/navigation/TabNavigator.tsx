@@ -38,24 +38,24 @@ function CustomTabBarButton({ children, onPress }: BottomTabBarButtonProps) {
 }
 
 
-function HomeTabBarIcon({ focused }: { focused: boolean }) {
-    return <HomeIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+function HomeTabBarIcon({ color }: { focused: boolean, color: string }) {
+    return <HomeIcon width={24} height={24} color={color} />;
 }
 
-function DiagnoseTabBarIcon({ focused }: { focused: boolean }) {
-    return <DiagnoseIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+function DiagnoseTabBarIcon({ color }: { focused: boolean, color: string }) {
+    return <DiagnoseIcon width={24} height={24} color={color} />;
 }
 
 function ScanTabBarIcon() {
-    return <ScanIcon width={24} height={24} color="white" />;
+    return <ScanIcon width={24} height={24} color="#fff" />;
 }
 
-function MyGardenTabBarIcon({ focused }: { focused: boolean }) {
-    return <MyGardenIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+function MyGardenTabBarIcon({ color }: { focused: boolean, color: string }) {
+    return <MyGardenIcon width={24} height={24} color={color} />;
 }
 
-function ProfileTabBarIcon({ focused }: { focused: boolean }) {
-    return <ProfileIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+function ProfileTabBarIcon({ color }: { focused: boolean, color: string }) {
+    return <ProfileIcon width={24} height={24} color={color} />;
 }
 
 export default function TabNavigator() {
@@ -66,11 +66,9 @@ export default function TabNavigator() {
                 tabBarStyle: {
                     height: 50,
                 },
-                tabBarLabelStyle: {
-                    fontSize: 12,
-                },
-                tabBarActiveTintColor: "#1abc9c",
-                tabBarInactiveTintColor: "gray",
+                tabBarLabelStyle: styles.tabBarLabel,
+                tabBarActiveTintColor: COLORS.PRIMARY,
+                tabBarInactiveTintColor: "#BDBDBD",
                 headerShown: false,
             }}
             initialRouteName="Home"
@@ -79,14 +77,14 @@ export default function TabNavigator() {
                 name="Home"
                 component={HomeScreen}
                 options={{
-                    tabBarIcon: HomeTabBarIcon
+                    tabBarIcon: HomeTabBarIcon,
                 }}
             />
             <Tab.Screen
                 name="Diagnose"
                 component={DiagnoseScreen}
                 options={{
-                    tabBarIcon: DiagnoseTabBarIcon
+                    tabBarIcon: DiagnoseTabBarIcon,
                 }}
             />
             <Tab.Screen
@@ -102,14 +100,14 @@ export default function TabNavigator() {
                 name="My Garden"
                 component={MyGardenScreen}
                 options={{
-                    tabBarIcon: MyGardenTabBarIcon
+                    tabBarIcon: MyGardenTabBarIcon,
                 }}
             />
             <Tab.Screen
                 name="Profile"
                 component={ProfileScreen}
                 options={{
-                    tabBarIcon: ProfileTabBarIcon
+                    tabBarIcon: ProfileTabBarIcon,
                 }}
             />
         </Tab.Navigator>
@@ -140,5 +138,9 @@ const styles = StyleSheet.create({
     },
     screen: {
         flex: 1,
-    }
+    },
+    tabBarLabel: {
+        fontFamily: "Rubik-Regular",
+        fontSize: 10,
+    },
 });

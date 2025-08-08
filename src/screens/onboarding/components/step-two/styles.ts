@@ -16,11 +16,12 @@ export default StyleSheet.create({
     },
     title: {
         fontSize: 28,
+        fontFamily: "Rubik-Medium",
         textAlign: 'left',
         color: COLORS.MAIN_TEXT,
     },
     bold: {
-        fontWeight: 'bold',
+        fontFamily: "Rubik-ExtraBold",
     },
     underline: {
         position: 'absolute',
