@@ -5,6 +5,7 @@ import { AppDispatch, RootState } from '@/store';
 import { getCategoriesAsync } from '@/store/slices/categoriesSlice';
 import { Category } from '@/types/api';
 import styles from './styles';
+import Loading from '@/components/loading/Loading';
 
 const CategoryCard = ({ category }: { category: Category }) => {
     return (
@@ -32,9 +33,7 @@ const CategoryList = () => {
 
     if (loading) {
         return (
-            <View>
-                <Text>Loading categories...</Text>
-            </View>
+            <Loading size="large" />
         );
     }
 

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '@/store';
 import { getQuestionsAsync } from '@/store/slices/questionsSlice';
 import { Question } from '@/types/api';
+import Loading from '@/components/loading/Loading';
 
 const QuestionCard = ({ question }: { question: Question }) => {
     return (
@@ -24,11 +25,7 @@ const QuestionList = () => {
     }, [dispatch]);
 
     if (loading) {
-        return (
-            <View>
-                <Text>Loading questions...</Text>
-            </View>
-        );
+        return <Loading size="large" />;
     }
 
     if (error) {
@@ -43,12 +40,25 @@ const QuestionList = () => {
         <QuestionCard question={item} />
     );
 
+    const getItemLayout = (data: any, index: number) => ({
+        length: 124, // Adjust based on your item width + gap
+        offset: 124 * index,
+        index,
+    });
+
+    const keyExtractor = (item: Question) => item.id.toString();
+
+
     return (
         <FlatList
             data={questions}
             horizontal
-            keyExtractor={(item) => item.id.toString()}
+            keyExtractor={keyExtractor}
             renderItem={renderItem}
+            getItemLayout={getItemLayout}
+            initialNumToRender={3}
+            maxToRenderPerBatch={5}
+            removeClippedSubviews={true}
             contentContainerStyle={{ gap: 10 }}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
