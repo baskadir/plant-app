@@ -1,7 +1,7 @@
 import Button from "@/components/button/Button";
 import { completeOnboarding } from "@/store/slices/onboardingSlice";
 import { NavigationProp, ParamListBase, useNavigation } from "@react-navigation/native";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { View, Image, Text, FlatList, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "@/store";
@@ -10,7 +10,7 @@ import ScanIcon from "@/assets/icons/scan.svg";
 import SpeedoMeterIcon from "@/assets/icons/speedometer.svg";
 
 interface Feature {
-    icon: any;
+    icon: ReactNode;
     title: string;
     description: string;
 }

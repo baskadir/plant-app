@@ -1,12 +1,11 @@
 import { View, Text, FlatList } from 'react-native'
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '@/store';
-import { getCategoriesAsync } from '@/store/slices/categoriesSlice';
+import React from 'react'
+import { RootState } from '@/store';
 import { Category } from '@/types/api';
 import styles from './styles';
 import Loading from '@/components/loading/Loading';
 import FastImage from '@d11/react-native-fast-image';
+import { useSelector } from 'react-redux';
 
 const CategoryCard = ({ category }: { category: Category }) => {
     return (
@@ -25,12 +24,7 @@ const CategoryCard = ({ category }: { category: Category }) => {
 }
 
 const CategoryList = () => {
-    const dispatch = useDispatch<AppDispatch>();
     const { categories, loading, error } = useSelector((state: RootState) => state.categories);
-
-    useEffect(() => {
-        dispatch(getCategoriesAsync());
-    }, [dispatch]);
 
     if (loading) {
         return (

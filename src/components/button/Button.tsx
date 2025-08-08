@@ -26,7 +26,7 @@ const Button = ({
             style={[styles.button, { backgroundColor: bgColor, width: width, height: height, borderRadius: borderRadius }]}
             disabled={disabled}
             onPress={onPress}
-            activeOpacity={1}
+            activeOpacity={0.9}
         >
             <Text style={styles.buttonText}>{title}</Text>
         </TouchableOpacity>

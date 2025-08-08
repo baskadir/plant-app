@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from "react-native";
 
-const { height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 export default StyleSheet.create({
     container: {
@@ -8,22 +8,23 @@ export default StyleSheet.create({
         backgroundColor: "#101E17"
     },
     imageContainer: {
-        height: height * 0.55,
         position: "relative",
-        justifyContent: "flex-end",
+        flex: 0.6,
     },
     bottomContainer: {
-        flex: 1,
         paddingHorizontal: 20,
+        flex: 0.4,
+        paddingBottom: 20,
+        justifyContent: "space-between",
     },
     image: {
-        width: "100%",
         height: "100%",
-        resizeMode: "stretch",
+        width: "100%",
+        resizeMode: "cover",
     },
     closeButton: {
         position: "absolute",
-        top: 20,
+        top: 40,
         right: 20,
         width: 24,
         height: 24,
@@ -43,6 +44,7 @@ export default StyleSheet.create({
     featureContainer: {
         position: "absolute",
         paddingLeft: 20,
+        bottom: 0,
     },
     featureTitle: {
         fontSize: 28,
@@ -64,7 +66,7 @@ export default StyleSheet.create({
         padding: 20,
         marginRight: 5,
         justifyContent: "center",
-        width: 156,
+        width: width * 0.4,
         height: 130,
     },
     featureCardIconContainer: {

@@ -1,9 +1,8 @@
 import { View, Text, FlatList } from 'react-native'
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '@/store';
-import { getQuestionsAsync } from '@/store/slices/questionsSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 import { Question } from '@/types/api';
 import Loading from '@/components/loading/Loading';
 import FastImage from '@d11/react-native-fast-image';
@@ -21,12 +20,7 @@ const QuestionCard = ({ question }: { question: Question }) => {
 }
 
 const QuestionList = () => {
-    const dispatch = useDispatch<AppDispatch>();
     const { questions, loading, error } = useSelector((state: RootState) => state.questions);
-
-    useEffect(() => {
-        dispatch(getQuestionsAsync());
-    }, [dispatch]);
 
     if (loading) {
         return <Loading size="large" />;

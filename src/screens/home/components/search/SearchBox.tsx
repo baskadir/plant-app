@@ -1,10 +1,20 @@
 import { View, TextInput } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './styles';
 import SearchIcon from '@/assets/icons/search.svg';
 
 const SearchBox = () => {
-    const [searchQuery, setSearchQuery] = React.useState('');
+    const [searchQuery, setSearchQuery] = React.useState("");
+
+    useEffect(() => {
+        const handler = setTimeout(() => {
+            console.log("Searching for:", searchQuery);
+        }, 500);
+
+        return () => {
+            clearTimeout(handler);
+        };
+    }, [searchQuery]);
 
     return (
         <View style={styles.container}>

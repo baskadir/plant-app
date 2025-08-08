@@ -5,8 +5,22 @@ import PremiumBox from './components/premium-box/PremiumBox';
 import QuestionList from './components/questions/QuestionList';
 import CategoryList from './components/categories/CategoryList';
 import styles from './styles';
+import { AppDispatch } from '@/store';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getCategoriesAsync } from '@/store/slices/categoriesSlice';
+import { getQuestionsAsync } from '@/store/slices/questionsSlice';
 
 const HomeScreen = () => {
+    const dispatch = useDispatch<AppDispatch>();
+
+    useEffect(() => {
+        Promise.all([
+            dispatch(getCategoriesAsync()),
+            dispatch(getQuestionsAsync())
+        ]);
+    }, [dispatch]);
+
     return (
         <ScrollView style={styles.container}>
             <View style={styles.headerContainer}>
