@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { COLORS } from '@/utils/constants/colors.ts';
+
+const { height } = Dimensions.get('window');
 
 export default StyleSheet.create({
     container: {
@@ -44,6 +46,7 @@ export default StyleSheet.create({
     },
     phoneImage: {
         marginTop: 40,
+        height: height * 0.8,
     },
     scanImage: {
         position: 'absolute',

@@ -1,11 +1,13 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { COLORS } from '@/utils/constants/colors.ts';
+
+const { height } = Dimensions.get('window');
 
 export default StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: '#F3FAFF',
     },
     titleContainer: {
         paddingInline: 36,
@@ -26,7 +28,7 @@ export default StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: 499,
+        height: height * 0.6,
         resizeMode: 'contain',
         marginTop: 16,
     },

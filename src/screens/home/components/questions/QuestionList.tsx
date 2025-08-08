@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React, { useEffect } from 'react'
 import styles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,11 +6,15 @@ import { AppDispatch, RootState } from '@/store';
 import { getQuestionsAsync } from '@/store/slices/questionsSlice';
 import { Question } from '@/types/api';
 import Loading from '@/components/loading/Loading';
+import FastImage from '@d11/react-native-fast-image';
 
 const QuestionCard = ({ question }: { question: Question }) => {
     return (
         <View style={styles.questionCard}>
-            <Image source={{ uri: question.image_uri }} style={styles.questionImage} />
+            <FastImage
+                source={{ uri: question.image_uri, priority: FastImage.priority.normal }}
+                resizeMode={FastImage.resizeMode.contain} style={styles.questionImage}
+            />
             <Text style={styles.questionTitle}>{question.title}</Text>
         </View>
     );

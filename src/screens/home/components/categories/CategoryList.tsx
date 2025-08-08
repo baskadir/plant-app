@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '@/store';
@@ -6,13 +6,14 @@ import { getCategoriesAsync } from '@/store/slices/categoriesSlice';
 import { Category } from '@/types/api';
 import styles from './styles';
 import Loading from '@/components/loading/Loading';
+import FastImage from '@d11/react-native-fast-image';
 
 const CategoryCard = ({ category }: { category: Category }) => {
     return (
         <View style={styles.container}>
             {category.image && (
-                <Image
-                    source={{ uri: category.image.url }}
+                <FastImage
+                    source={{ uri: category.image.url, priority: FastImage.priority.normal }}
                     style={styles.image}
                 />
             )}

@@ -8,11 +8,8 @@ export default StyleSheet.create({
         overflow: 'hidden',
     },
     questionImage: {
-        width: '100%',
-        height: "100%",
-        borderTopLeftRadius: 12,
-        borderTopRightRadius: 12,
-        resizeMode: 'contain',
+        width: 240,
+        height: 164,
     },
     questionTitle: {
         fontFamily: "Rubik-Medium",

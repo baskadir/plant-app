@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
+
+const { height } = Dimensions.get("window");
 
 export default StyleSheet.create({
     container: {
@@ -6,7 +8,7 @@ export default StyleSheet.create({
         backgroundColor: "#101E17"
     },
     imageContainer: {
-        flex: 1.6,
+        height: height * 0.55,
         position: "relative",
         justifyContent: "flex-end",
     },

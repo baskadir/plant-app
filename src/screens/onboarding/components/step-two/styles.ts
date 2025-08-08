@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { COLORS } from '@/utils/constants/colors.ts';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export default StyleSheet.create({
     container: {
@@ -38,6 +38,7 @@ export default StyleSheet.create({
     },
     phoneImage: {
         width: width * 0.7,
+        height: height * 0.7,
         zIndex: 2,
         marginTop: 60,
     },
