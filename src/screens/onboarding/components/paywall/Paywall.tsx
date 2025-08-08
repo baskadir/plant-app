@@ -6,6 +6,8 @@ import { View, Image, Text, FlatList, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "@/store";
 import styles from "./styles";
+import ScanIcon from "@/assets/icons/scan.svg";
+import SpeedoMeterIcon from "@/assets/icons/speedometer.svg";
 
 interface Feature {
     icon: any;
@@ -15,17 +17,17 @@ interface Feature {
 
 const FEATURES: Feature[] = [
     {
-        icon: require("@/assets/icons/icon-unlimited.png"),
+        icon: <ScanIcon width={18} height={18} color="#FFFFFF" />,
         title: "Unlimited",
         description: "Plant identify.",
     },
     {
-        icon: require("@/assets/icons/icon-faster.png"),
+        icon: <SpeedoMeterIcon width={18} height={18} color="#FFFFFF" />,
         title: "Faster",
         description: "Process",
     },
     {
-        icon: require("@/assets/icons/icon-faster.png"),
+        icon: <SpeedoMeterIcon width={18} height={18} color="#FFFFFF" />,
         title: "Exclusive",
         description: "Access",
     }
@@ -34,7 +36,7 @@ const FEATURES: Feature[] = [
 const FeatureCard = ({ icon, title, description }: Feature) => (
     <View style={styles.featureCard}>
         <View style={styles.featureCardIconContainer}>
-            <Image source={icon} style={styles.featureCardIcon} />
+            {icon}
         </View>
         <Text style={styles.featureCardTitle}>{title}</Text>
         <Text style={styles.featureCardDescription}>{description}</Text>

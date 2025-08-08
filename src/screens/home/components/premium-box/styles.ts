@@ -35,5 +35,6 @@ export default StyleSheet.create({
     },
     iconRight: {
         resizeMode: "contain",
+        color: "#D0B070"
     }
 });

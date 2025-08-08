@@ -56,8 +56,8 @@ export default StyleSheet.create({
         fontWeight: 200,
     },
     featureCard: {
-        backgroundColor: "rgba(0, 0, 0, 0.24)",
-        borderRadius: 10,
+        backgroundColor: "rgba(255, 255, 255, 0.08)",
+        borderRadius: 14,
         padding: 20,
         marginRight: 5,
         justifyContent: "center",
@@ -72,10 +72,6 @@ export default StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginBottom: 16,
-    },
-    featureCardIcon: {
-        width: 18,
-        height: 18,
     },
     featureCardTitle: {
         fontSize: 20,

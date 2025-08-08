@@ -8,7 +8,7 @@ export default StyleSheet.create({
         borderRadius: 12,
         marginHorizontal: 5.5,
         backgroundColor: "#F4F6F6",
-        borderColor: "rgba(41, 187, 137, 0.18)",
+        borderColor: "#rgba(60, 60, 67, 0.1)",
         borderWidth: 0.5,
         overflow: 'hidden',
     },

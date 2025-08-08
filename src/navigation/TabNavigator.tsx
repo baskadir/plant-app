@@ -1,7 +1,13 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { BottomTabBarButtonProps, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "@/screens/home/HomeScreen";
+import HomeIcon from "@/assets/icons/home.svg";
+import DiagnoseIcon from "@/assets/icons/diagnose.svg";
+import MyGardenIcon from "@/assets/icons/mygarden.svg";
+import ProfileIcon from "@/assets/icons/profile.svg";
+import ScanIcon from "@/assets/icons/scan.svg";
+import { COLORS } from "@/utils/constants/colors";
 
 // Placeholder components for other screens
 function DiagnoseScreen() {
@@ -31,34 +37,26 @@ function CustomTabBarButton({ children, onPress }: BottomTabBarButtonProps) {
     );
 }
 
-const TabBarIcon = ({ source }: { source: any }) => (
-    <Image
-        source={source}
-        style={styles.icon}
-    />
-);
 
-// use svg for icons in real app, do not use png
-const HomeTabIcon = () => (
-    <TabBarIcon source={require('@/assets/icons/icon-home.png')} />
-);
+function HomeTabBarIcon({ focused }: { focused: boolean }) {
+    return <HomeIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+}
 
-const DiagnoseTabIcon = () => (
-    <TabBarIcon source={require('@/assets/icons/icon-diagnose.png')} />
-);
+function DiagnoseTabBarIcon({ focused }: { focused: boolean }) {
+    return <DiagnoseIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+}
 
-const MyGardenTabIcon = () => (
-    <TabBarIcon source={require('@/assets/icons/icon-mygarden.png')} />
-);
+function ScanTabBarIcon() {
+    return <ScanIcon width={24} height={24} color="white" />;
+}
 
-const ProfileTabIcon = () => (
-    <TabBarIcon source={require('@/assets/icons/icon-profile.png')} />
-);
+function MyGardenTabBarIcon({ focused }: { focused: boolean }) {
+    return <MyGardenIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+}
 
-const ScanTabIcon = () => (
-    <TabBarIcon source={require('@/assets/icons/icon-scan.png')} />
-);
-
+function ProfileTabBarIcon({ focused }: { focused: boolean }) {
+    return <ProfileIcon width={24} height={24} color={focused ? COLORS.PRIMARY : "#BDBDBD"} />;
+}
 
 export default function TabNavigator() {
     return (
@@ -81,21 +79,21 @@ export default function TabNavigator() {
                 name="Home"
                 component={HomeScreen}
                 options={{
-                    tabBarIcon: HomeTabIcon,
+                    tabBarIcon: HomeTabBarIcon
                 }}
             />
             <Tab.Screen
                 name="Diagnose"
                 component={DiagnoseScreen}
                 options={{
-                    tabBarIcon: DiagnoseTabIcon,
+                    tabBarIcon: DiagnoseTabBarIcon
                 }}
             />
             <Tab.Screen
                 name="Scan"
                 component={ScanScreen}
                 options={{
-                    tabBarIcon: ScanTabIcon,
+                    tabBarIcon: ScanTabBarIcon,
                     tabBarButton: CustomTabBarButton,
                     tabBarLabelStyle: { display: 'none' }
                 }}
@@ -104,14 +102,14 @@ export default function TabNavigator() {
                 name="My Garden"
                 component={MyGardenScreen}
                 options={{
-                    tabBarIcon: MyGardenTabIcon,
+                    tabBarIcon: MyGardenTabBarIcon
                 }}
             />
             <Tab.Screen
                 name="Profile"
                 component={ProfileScreen}
                 options={{
-                    tabBarIcon: ProfileTabIcon,
+                    tabBarIcon: ProfileTabBarIcon
                 }}
             />
         </Tab.Navigator>

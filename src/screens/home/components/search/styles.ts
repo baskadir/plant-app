@@ -22,5 +22,6 @@ export default StyleSheet.create({
     searchIcon: {
         width: 20,
         height: 20,
+        color: "#ABABAB"
     },
 })
